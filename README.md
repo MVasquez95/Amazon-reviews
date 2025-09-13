@@ -71,9 +71,9 @@ The workflow includes:
 
 | Model                  | Train Time        | Validation Accuracy | Test Accuracy | Comments |
 |------------------------|-----------------|------------------|---------------|----------|
-| Logistic Regression    | ~9 s            | 0.8673           | 0.8654        | Baseline TF-IDF model. Fast and stable. |
-| SVM                    | ~3 s            | 0.8631           | 0.8606        | Lightweight and efficient. |
-| DistilBERT             | 76 m 11.8 s     | 0.9324           | 0.9340        | Fine-tuned transformer. Significant improvement. |
+| Logistic Regression    | ~2.6 s s            | 0.8673           | 0.8654        | Baseline TF-IDF model. Fast and stable. |
+| SVM                    | ~1.8 s s            | 0.8631           | 0.8606        | Lightweight and efficient. |
+| DistilBERT             | 52 m 31.2 s     | 0.9334           | 0.9340        | Fine-tuned transformer. Significant improvement. |
 
 **Key Conclusions:**
 
@@ -85,7 +85,7 @@ The workflow includes:
 
 ## 🛠️ Dependencies
 
-- Python >= 3.10  
+- Python >= 3.13  
 - pandas, numpy, matplotlib, seaborn  
 - scikit-learn  
 - transformers (Hugging Face)  
