@@ -35,11 +35,17 @@ The workflow includes:
 
 ## 📂 File Structure
 
-├── results/ # Model outputs and evaluation results (large, not included)
-├── amazon_reviews_clean.csv # Cleaned dataset (large, not included)
-├── amazon_reviews_subset.csv # Subset for training/testing (large, not included)
-├── notebooks.ipynb # Jupyter notebooks for EDA, modeling, evaluation
-└── README.md # Project documentation
+.
+├── results/  
+│   └── Model outputs and evaluation results (large, not included)
+├── amazon_reviews_clean.csv  
+│   └── Cleaned dataset (large, not included)
+├── amazon_reviews_subset.csv  
+│   └── Subset for training/testing (large, not included)
+├── notebook.ipynb/ 
+│   └── Jupyter notebooks for EDA, modeling, evaluation
+└── README.md  
+    └── Project documentation
 
 > **Note:** The `results/`, `amazon_reviews_clean.csv`, and `amazon_reviews_subset.csv` files are excluded from Git via `.gitignore` due to their size.  
 > To reproduce these files, follow the preprocessing steps in the notebooks or scripts.
