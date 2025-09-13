@@ -35,7 +35,6 @@ The workflow includes:
 
 ## 📂 File Structure
 
-.
 ├── results/  
 │   └── Model outputs and evaluation results (large, not included)
 ├── amazon_reviews_clean.csv  
