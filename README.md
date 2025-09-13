@@ -1,78 +1,99 @@
-Amazon Reviews Sentiment Analysis
+# Amazon Reviews Sentiment Analysis
 
-Author: Miguel Vásquez
-Date: September 2025
+**Author:** Miguel Vásquez  
+**Date:** September 2025  
 
-Project Overview
+---
 
-This project performs sentiment analysis on Amazon product reviews. The goal is to classify reviews as positive or negative using both classical machine learning models (Logistic Regression, SVM) and transformer-based models (DistilBERT, optionally BERT-base).
+## 📖 Project Overview
+
+This project performs **sentiment analysis** on Amazon product reviews. The goal is to classify reviews as **positive** or **negative** using both:
+
+- **Classical ML models:** Logistic Regression, SVM  
+- **Transformer-based models:** DistilBERT (and optionally BERT-base for future experiments)  
 
 The workflow includes:
 
-Exploratory Data Analysis (EDA): Investigating class distribution, review lengths, common words, n-grams, and sentiment-specific vocabulary.
+1. **Exploratory Data Analysis (EDA):**  
+   - Class distribution  
+   - Review lengths  
+   - Common words and n-grams  
+   - Sentiment-specific vocabulary
 
-Feature Engineering & Preprocessing:
+2. **Feature Engineering & Preprocessing:**  
+   - **TF-IDF vectorization** for traditional ML models  
+   - **Tokenization** for transformer models (DistilBERT)
 
-TF-IDF vectorization for traditional ML models.
+3. **Model Training & Evaluation:**  
+   - Comparison of models based on **accuracy** and **training time**  
 
-Tokenization and sequence preparation for transformer models.
+4. **Conclusions & Recommendations:**  
+   - Insights on model performance  
+   - Portfolio-ready demonstration of transformer usage
 
-Model Training & Evaluation: Comparing models in terms of accuracy and training time.
+---
 
-Conclusions & Recommendations: Selecting the best approach for portfolio demonstration and practical applications.
+## 📂 File Structure
 
-File Structure
-.
-├── results/                  # Model outputs and evaluation results (large, not included)
-├── amazon_reviews_clean.csv  # Cleaned dataset (large, not included)
-├── amazon_reviews_subset.csv # Subset of data for testing/training (large, not included)
-├── notebooks.ipynb           # Jupyter notebooks for EDA, modeling, and evaluation
-└── README.md                 # Project documentation
+├── results/ # Model outputs and evaluation results (large, not included)
+├── amazon_reviews_clean.csv # Cleaned dataset (large, not included)
+├── amazon_reviews_subset.csv # Subset for training/testing (large, not included)
+├── notebooks.ipynb # Jupyter notebooks for EDA, modeling, evaluation
+└── README.md # Project documentation
 
+> **Note:** The `results/`, `amazon_reviews_clean.csv`, and `amazon_reviews_subset.csv` files are excluded from Git via `.gitignore` due to their size.  
+> To reproduce these files, follow the preprocessing steps in the notebooks or scripts.
 
-Note: The results/, amazon_reviews_clean.csv, and amazon_reviews_subset.csv files are excluded from Git via .gitignore due to their size.
-To reproduce these files, follow the preprocessing steps described in the notebooks or scripts.
+---
 
-Data
+## 🗄️ Data
 
-The dataset contains Amazon product reviews, spanning multiple years.
+- Amazon product reviews spanning multiple years  
+- Each review contains:  
+  - Text of the review  
+  - Rating  
+  - Metadata (product & user IDs)  
 
-Each review includes the text, a rating, and metadata such as product and user IDs.
+- A smaller subset is used for **faster training** and portfolio purposes.
 
-A subset was used for faster experimentation and portfolio demonstration.
+---
 
-How to Reproduce
+## ⚙️ How to Reproduce
 
-Download the raw Amazon reviews dataset (publicly available or provided source).
+1. Download the raw Amazon reviews dataset.  
+2. Run the **preprocessing notebook/script** to create `amazon_reviews_clean.csv`.  
+3. Optionally, generate `amazon_reviews_subset.csv` for quick experimentation.  
+4. Train models using the **modeling notebook/script** to obtain results.
 
-Run the preprocessing notebook/script to clean the data and generate amazon_reviews_clean.csv.
+---
 
-Optionally, create a smaller subset amazon_reviews_subset.csv for quicker training and testing.
+## 📊 Model Performance
 
-Execute the modeling notebook/script to train models and generate results.
+| Model                  | Train Time        | Validation Accuracy | Test Accuracy | Comments |
+|------------------------|-----------------|------------------|---------------|----------|
+| Logistic Regression    | ~9 s            | 0.8673           | 0.8654        | Baseline TF-IDF model. Fast and stable. |
+| SVM                    | ~3 s            | 0.8631           | 0.8606        | Lightweight and efficient. |
+| DistilBERT             | 76 m 11.8 s     | 0.9324           | 0.9340        | Fine-tuned transformer. Significant improvement. |
 
-Dependencies
+**Key Conclusions:**
 
-Python >= 3.10
+- **Baseline models (LR & SVM):** Quick, suitable for smaller datasets, ~86% accuracy.  
+- **DistilBERT:** Outperforms classical models, ~93% accuracy, robust for NLP tasks.  
+- **BERT-base:** Potentially stronger but more resource-heavy; recommended for future or cloud experiments.  
 
-pandas, numpy, matplotlib, seaborn
+---
 
-scikit-learn
+## 🛠️ Dependencies
 
-transformers (Hugging Face)
+- Python >= 3.10  
+- pandas, numpy, matplotlib, seaborn  
+- scikit-learn  
+- transformers (Hugging Face)  
+- datasets (Hugging Face)  
+- torch (PyTorch)  
 
-datasets (Hugging Face)
+---
 
-torch (PyTorch)
+## 📌 License
 
-Results
-
-Classical models (Logistic Regression, SVM) achieve ~86% test accuracy.
-
-DistilBERT achieves ~93% test accuracy, showing the advantage of transformer-based models for NLP tasks.
-
-Training times vary significantly between classical models (seconds) and transformers (~76 minutes for 30k samples with DistilBERT).
-
-License
-
-This project is for educational and portfolio purposes.
+This project is for **educational and portfolio purposes**.
