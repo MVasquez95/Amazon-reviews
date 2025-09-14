@@ -1,3 +1,6 @@
 results/
 amazon_reviews_clean.csv
 amazon_reviews_subset.csv
+distilbert_local_model/
+df_report_test_bert.csv
+df_report_val_bert.csv
